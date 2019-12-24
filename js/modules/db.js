@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var oMysqlDb = /** @class */ (function () {
     function oMysqlDb() {
         console.log('建立数据库连接！');
@@ -24,18 +25,4 @@ var oMysqlDb = /** @class */ (function () {
     };
     return oMysqlDb;
 }());
-var User = /** @class */ (function () {
-    function User() {
-    }
-    return User;
-}());
-var u = new User();
-u.name = '张三';
-u.password = '123';
-var u1 = new User();
-u1.id = 1;
-u1.name = '张三11';
-u1.password = '123456';
-var Db = new oMysqlDb();
-Db.add(u);
-Db.update(u1, u1.id);
+exports.default = oMysqlDb;
