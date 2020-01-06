@@ -11,13 +11,85 @@
         // es5：类
 
         // 1.最简单的类
-        function Person(){
+        /* function Person(){
             this.name = "张三";
             this.age = 20;
         }
 
         var p = new Person();
-        alert(p.name);
+        alert(p.name); */
+
+        // 2.静态类
+        /* function Person(){
+            this.name = "张三";
+            this.age = 20;
+        }
+        Person.walk = function(){
+            alert('行走');
+        }
+        
+        Person.walk(); */
+
+        // 3.原型链继承(弊端：无法传递参数)
+        /* function Person(name){
+            this.name = name;
+            this.age = 20;
+        }
+        Person.prototype.eat = function(){
+            alert(this.name+'会吃')
+        }
+        function man(){}
+        man.prototype = new Person();
+        var m = new man();
+        m.eat(); */
+
+        // 4.call、apply继承
+        /* function Person(name){
+            this.name = name;
+            this.age = 20;
+            this.walk=function(){
+                alert(this.name+'走')
+            }
+        }
+        Person.prototype.eat = function(){
+            alert(this.name+'会吃')
+        }
+
+        function woman(name){
+            Person.call(this,name)
+        }
+
+        var w = new woman('女人')
+        w.walk();  // 可以实现构造函数中的方法
+        w.eat();   // 不可以实现原型链上的方法 */
+
+        // 5.es5实现继承的方法（原型链+call,apply）
+        function Person(name){
+            this.name = name;
+            this.age = 20;
+            this.walk=function(){
+                alert(this.name+'在行走')
+            }
+        }
+        Person.prototype.eat = function(){
+            alert(this.name+'在吃饭')
+        }
+
+        function Man(name){
+            Person.call(this,name)
+        }
+
+        Man.prototype = Person.prototype;
+        var M = new Man('李四');
+        M.walk();
+        M.eat();
+
+
+
+
+
+
+
 
     </script>
 </body>
