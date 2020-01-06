@@ -10,6 +10,7 @@ function getData<T>(value:T):T{
 }
 
 getData<number>(123);
+getData('123')
 
 
 

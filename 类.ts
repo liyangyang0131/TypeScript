@@ -13,8 +13,7 @@
 // }
 
 // Dog是一个 派生类，它派生自 Animal 基类，通过 extends关键字。 派生类通常被称作 子类，基类通常被称作 超类。
-// 派生类包含了一个构造函数，它 必须调用 super()，它会执行基类的构造函数。 而且，在构造函数里访问 this的属性
-// 之前，我们 一定要调用 super()。
+// 派生类包含了一个构造函数，它 必须调用 super()，它会执行 基类的构造函数 。 而且，在构造函数里访问 this的属性之前，我们 一定要调用 super()。
 // 如何在子类里可以重写父类的方法。
 // class Dog extends Animal{
 //     constructor(name:string){
@@ -65,12 +64,13 @@
 // }
 
 // let employee = new Employee();
-// employee.fullName = "Bob Smith";
-// if (employee.fullName) {
+// employee.fullName = "Bob Smith";  // set
+// if (employee.fullName) {          // get
 //     alert(employee.fullName);
 // }
 
-// 4.静态属性
+// 4.静态属性  
+// 关键字：static
 // 属性存在于类本身上面而不是类的实例上
 
 // 5.抽象类
@@ -89,7 +89,7 @@
 //     }
 // }
 
-// // var a = new Animal();  //错误写法
+// // var a = new Animal();  //错误写法  //抽象类是不可以被实例化的
 
 // var c = new Cat()
 // c.eat();
